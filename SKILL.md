@@ -1,6 +1,7 @@
 ---
 name: ollama-web-search-cli
 description: 使用 Ollama Web Search API 进行网络搜索和网页抓取
+homepage: https://github.com/SunnyDou/ollama-web-search-skill
 version: 1.0.1
 author: sunnydou
 license: MIT
@@ -12,6 +13,13 @@ env:
     source: https://ollama.com/settings/keys
 credentials:
   - OLLAMA_API_KEY
+metadata:
+  openclaw:
+    emoji: "🔍"
+    requires:
+      bins: ["curl", "python3"]
+      env: ["OLLAMA_API_KEY"]
+    primaryEnv: OLLAMA_API_KEY
 ---
 
 # ollama-web-search Skill
@@ -190,14 +198,9 @@ curl -X POST "https://ollama.com/api/web_fetch" \
 
 ```
 ollama-search-tool/
-├── SKILL.md              # 技能文档
+├── SKILL.md              # 技能文档（含 metadata）
 ├── README.md             # 快速入门
-├── _meta.json            # 元数据
 └── ollama-web-search.sh  # 主脚本
-
-slash-commands/
-├── ollama-search         # 搜索命令
-└── ollama-fetch          # 抓取命令
 ```
 
 ---
